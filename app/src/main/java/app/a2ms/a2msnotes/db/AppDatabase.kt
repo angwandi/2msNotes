@@ -32,4 +32,7 @@ class AppDatabase private constructor(context: Context) :
             else -> throw IllegalArgumentException("onUpgrade() with unknown newVersion: $newVersion")
         }
     }
+
+    companion object : SingletonHolder<AppDatabase, Context>(::AppDatabase)
+
 }
